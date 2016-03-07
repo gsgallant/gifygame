@@ -66,7 +66,7 @@
 
 </div>
 
-<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 <script type="text/javascript">
 var limit =12;//how many gifs to get from the api
 var gifs = ['birds', 'owls','bicycles','lions','puppies','coffee', 'ocean', 'monkey', 'jazz','weather','lightning','kids','computer'];
@@ -94,7 +94,7 @@ function renderButtons(){
 /*this function iterates through the object (which has been saved in an array and displays the gif as still and makes the attributes needed for checking the state and toggling it by the function checkState)*/
 function displayGif(){
 		var gif = $(this).attr('data-name');
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC&limit="+12;
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC&limit="+12;
 		// console.log(queryURL);
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 			var results = response.data;

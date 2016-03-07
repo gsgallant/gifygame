@@ -1,14 +1,81 @@
-Last login: Sat Mar  5 12:21:34 on ttys000
-Greg@Gregs-MacBook-Pro:~$ cd desktop/rbc
-Greg@Gregs-MacBook-Pro:~/desktop/rbc$ git clone https://github.com/gsgallant/week-6-game.git
+Last login: Mon Mar  7 09:35:20 on ttys000
+Greg@Gregs-MacBook-Pro:~$ cd desktop
+Greg@Gregs-MacBook-Pro:~/desktop$ cd week-6-game
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game$ cd ..
+Greg@Gregs-MacBook-Pro:~/desktop$ git clone 
+You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recursive           initialize submodules in the clone
+    --recurse-submodules  initialize submodules in the clone
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --single-branch       clone only one branch, HEAD or --branch
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+
+Greg@Gregs-MacBook-Pro:~/desktop$ git clone 
+You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recursive           initialize submodules in the clone
+    --recurse-submodules  initialize submodules in the clone
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --single-branch       clone only one branch, HEAD or --branch
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+
+Greg@Gregs-MacBook-Pro:~/desktop$ git clone https://github.com/gsgallant/week-6-game.git
+fatal: destination path 'week-6-game' already exists and is not an empty directory.
+Greg@Gregs-MacBook-Pro:~/desktop$ git clone https://github.com/gsgallant/week-6-game.git
 Cloning into 'week-6-game'...
 warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
-Greg@Gregs-MacBook-Pro:~/desktop/rbc$ cd homeworkcompleted
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted (master)$ cd week-6-game
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game$ git add -A
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game$ git commit -m "HW6 complete"
-[master (root-commit) 7a7b7cb] HW6 complete
+Greg@Gregs-MacBook-Pro:~/desktop$ cd week-6-game
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game$ git add -A
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game$ git commit -m "HW6 completed"
+[master (root-commit) 6658227] HW6 completed
  Committer: gsgallant <Greg@Gregs-MacBook-Pro.local>
 Your name and email address were configured automatically based
 on your username and hostname. Please check that they are accurate.
@@ -21,44 +88,44 @@ After doing this, you may fix the identity used for this commit with:
 
     git commit --amend --reset-author
 
- 3 files changed, 142 insertions(+)
+ 4 files changed, 274 insertions(+)
+ create mode 100644 Terminal Saved Output heroku
  create mode 100755 composer.json
  create mode 100755 index.html
  create mode 100755 index.php
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ git push
-Counting objects: 5, done.
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ git push
+Counting objects: 6, done.
 Delta compression using up to 4 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (5/5), 1.89 KiB | 0 bytes/s, done.
-Total 5 (delta 0), reused 0 (delta 0)
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 3.79 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
 To https://github.com/gsgallant/week-6-game.git
  * [new branch]      master -> master
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ heroku login
-Updating Heroku v4 CLI to 4.27.25-3b727e5 (master)... done
-Updating plugins... done. Updated 3 packages.
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ heroku login
 Enter your Heroku credentials.
-Email: greg.gallant@yahoo.com	
+Email: greg.gallant@yahoo.com
 Password (typing will be hidden): 
 Logged in as greg.gallant@yahoo.com
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ heroku create
-Creating app... done, stack is cedar-14
-https://calm-hollows-93138.herokuapp.com/ | https://git.heroku.com/calm-hollows-93138.git
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ git remote -v
-heroku	https://git.heroku.com/calm-hollows-93138.git (fetch)
-heroku	https://git.heroku.com/calm-hollows-93138.git (push)
-origin	https://github.com/gsgallant/week-6-game.git (fetch)
-origin	https://github.com/gsgallant/week-6-game.git (push)
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ git create heroku master
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ git push heroku master
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ git create
 git: 'create' is not a git command. See 'git --help'.
 
 Did you mean this?
 	reset
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ git push heroku master
-Counting objects: 5, done.
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ heroku create
+Creating app... done, stack is cedar-14
+https://lit-forest-83843.herokuapp.com/ | https://git.heroku.com/lit-forest-83843.git
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ git push heroku master
+Counting objects: 6, done.
 Delta compression using up to 4 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (5/5), 1.89 KiB | 0 bytes/s, done.
-Total 5 (delta 0), reused 0 (delta 0)
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 3.79 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
 remote: Compressing source files... done.
 remote: Building source:
 remote: 
@@ -78,12 +145,12 @@ remote: -----> Discovering process types
 remote:        Procfile declares types -> web
 remote: 
 remote: -----> Compressing...
-remote:        Done: 73.9M
+remote:        Done: 74M
 remote: -----> Launching...
 remote:        Released v3
-remote:        https://calm-hollows-93138.herokuapp.com/ deployed to Heroku
+remote:        https://lit-forest-83843.herokuapp.com/ deployed to Heroku
 remote: 
 remote: Verifying deploy... done.
-To https://git.heroku.com/calm-hollows-93138.git
+To https://git.heroku.com/lit-forest-83843.git
  * [new branch]      master -> master
-Greg@Gregs-MacBook-Pro:~/desktop/rbc/homeworkcompleted/week-6-game (master)$ 
+Greg@Gregs-MacBook-Pro:~/desktop/week-6-game (master)$ 
