@@ -18,16 +18,8 @@
 		form, input{
 			margin: 2px;
 			color: royalblue;
-			
-
-
 		}
-		.rating{
-			color: white;
-			font-size: 13px;
-			text-align: center;
-		
-		}
+
 		.gif{
 			font-size: 12px;
 			color: red;
@@ -47,7 +39,6 @@
 		
 		.gifDiv{
 			width: 100%;
-			/*margin: 20px 0px 0px 0px;*/
 			top: 30%;
 			left: 0%;
 
@@ -129,7 +120,7 @@ function displayGif(){
                 
                 for (var i = 0; i < results.length; i++) {
                     if (i==0){$('.gifDiv').empty();}
-                    var r = $('<div>').text("Rating: " + results[i].rating).attr('class','rating');
+                    var r = $('<div>').text("Rating: " + results[i].rating);
                     var gifImage= $('<img>');
                     
                     var fixHgtURL = results[i].images.fixed_height.url;
