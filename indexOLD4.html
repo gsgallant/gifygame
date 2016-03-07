@@ -23,14 +23,9 @@
 
 		}
 		.rating{
-			color: red;
-			font-size: 12px;
+			color: white;
+			font-size: 13px;
 			text-align: center;
-			position: relative;
-			left: 10px;
-			top: 24px;
-			width: 54px;
-			background-color: black;
 		
 		}
 		.gif{
@@ -134,7 +129,7 @@ function displayGif(){
                 
                 for (var i = 0; i < results.length; i++) {
                     if (i==0){$('.gifDiv').empty();}
-                    var r = $('<div>').text("Rated: " + results[i].rating).attr('class','rating');
+                    var r = $('<div>').text("Rating: " + results[i].rating).attr('class','rating');
                     var gifImage= $('<img>');
                     
                     var fixHgtURL = results[i].images.fixed_height.url;
