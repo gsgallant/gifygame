@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Homework 6</title>
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -12,21 +12,14 @@
 		
 		button{
 			margin: 1px;
-			color: black;
+			color: red;
 		}
 
 		form, input{
-			margin: 2px;
+			margin: .5px;
 			color: royalblue;
 		}
 
-		.gif{
-			font-size: 12px;
-			color: red;
-			border: .25px;
-			background-color: white;
-
-		}
 		.gifImage{
 			border: solid black 1px;
 			width: 120%;
@@ -34,14 +27,13 @@
 			padding: 5px;
 			max-height: 220px;
 			max-width: 200px;
-			background-color: lightgrey;
+			
 		}
 		
 		.gifDiv{
 			width: 100%;
 			top: 30%;
 			left: 0%;
-
 		}
 		.ratingAndImageDiv{
 			float:left;
@@ -93,16 +85,6 @@ function appendNewButton(gif){
     a.attr('data-name', gif);
     a.text(gif);
     $('#buttonsView').append(a);
-
-	$('.gif').hover(function(){					
-		$(this).css('color', 'black');
-		$(this).css('background','cyan');
-		$(this).css('font-size','12px');
-		}, function(){
-		$(this).css('color', 'red');
-		$(this).css('background','white');
-		$(this).css('font-size','12px');
-	});
 }
 //function to make the buttons appear on the page.
 function renderButtons(){ 
@@ -132,18 +114,10 @@ function displayGif(){
                 	gifImage.attr('data-state','still');
                 	gifImage.attr('class','gifImage');
                 	gifImage.attr('id',i);
-                	
+
             		var ratingAndImageDiv = $('<div>').attr('class','col-sm-2 ratingAndImageDiv');
             		ratingAndImageDiv.append(r).append(gifImage);
-                	
                 	$('.gifDiv').append(ratingAndImageDiv);
-                	$('#' + i).hover(function(){					
-						$(this).css('color', 'white');
-						$(this).css('background','red');
-						}, function(){
-						$(this).css('color', 'black');
-						$(this).css('background','lightgrey');
-					});
                 }
 		}); 
 }
@@ -205,20 +179,6 @@ $('#addGif').on('click', function(){
 
 renderButtons();
 
-	
-			
-
-
-
 </script>
 </body>
 </html>
-
-
-<!-- $('#q' + k).hover(function(){					
-				$(this).css('color', 'white');
-				$(this).css('background','red');
-					}, function(){
-					$(this).css('color', 'black');
-					$(this).css('background','lightgrey');
-					}); -->
