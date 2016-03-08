@@ -8,11 +8,11 @@
 <style type="text/css">
 		body {
 			background-color: #807391;
-		}
+		/*}
 		@media (min-width: 768px){
 		.col-sm-3 {
 		    width: 16.5%;
-	}
+	}*/
 		}
 		
 		button{
@@ -63,6 +63,7 @@
 		.ratingAndImageDiv{
 			float:left;
 			margin: 0px;
+			width: 210px;
 		}
 </style>
 </head>
@@ -93,7 +94,7 @@
 <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 <script type="text/javascript">
 var limit =12;//how many gifs to get from the api
-var gifs = ['nasa', 'pyschedelic','tequila','gorilla','puppy','airplane', 'ocean', 'monkey', 'jazz','thunder','lightning','funny kids','computer'];
+var gifs = ['nasa', 'pyschedelic','tequila','gorilla','puppies','airplane', 'ocean', 'monkey', 'jazz','thunder','lightning','funny kids','computer'];
 
 $(document).on('click', '.gif', displayGif);//when the button with the name of a gif is clicked (class="gif")
 $(document).on('click', '.gifImage', checkState);//when a gif is clicked it changes state (still or animate)
