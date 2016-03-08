@@ -94,7 +94,7 @@
 <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 <script type="text/javascript">
 var limit =12;//how many gifs to get from the api
-var gifs = ['nasa', 'pyschedelic','tequila','gorilla','puppies','airplane', 'ocean', 'monkey', 'jazz','thunder','lightning','funny kids','computer'];
+var gifs = ['space', 'NYC','Italy','gorilla','puppies','airplane', 'eyes','funny faces','lightning','funny kids','design'];
 
 $(document).on('click', '.gif', displayGif);//when the button with the name of a gif is clicked (class="gif")
 $(document).on('click', '.gifImage', checkState);//when a gif is clicked it changes state (still or animate)
@@ -102,6 +102,19 @@ $(document).on('click', '.animateAll', animateAll);//
 $(document).on('click', '.toggleAll', toggleAll);
 $(document).on('click', '.stillAll', stillAll);
 $(document).on('click', '.clearAll', clearAll);
+
+//this is the listener for the addgif button
+$('#addGif').on('click', function(){
+		var gif = $('#gif-input').val().trim();
+		
+		if (gif!=""){
+			gifs.push(gif);
+			appendNewButton(gif);
+			$('#gif-input').val("");//clears text input box
+		}
+		return false;
+	});
+
 //if the user wants a new button this function makes it happen using the text box.  
 function appendNewButton(gif){ 
     var a = $('<button>')
@@ -109,7 +122,6 @@ function appendNewButton(gif){
     a.attr('data-name', gif);
     a.text(gif);
     $('#buttonsView').append(a);
-
 	$('.gif').hover(function(){					
 		$(this).css('color', 'black');
 		$(this).css('background','cyan');
@@ -207,17 +219,7 @@ function clearAll(){
 	    $('.gifDiv').empty();
 
 }
-//this is the listener for the addgif button
-$('#addGif').on('click', function(){
-		var gif = $('#gif-input').val().trim();
-		
-		if (gif!=""){
-			gifs.push(gif);
-			appendNewButton(gif);
-			$('#gif-input').val("");//clears text input box
-		}
-		return false;
-	});
+
 
 renderButtons();
 
