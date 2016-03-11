@@ -217,8 +217,8 @@ function autoAll(){
 		    displayGif(gifs[i],'animate');
 		    if (++i<gifs.length) {          // If i < the number of gif buttons keep going
 		      theLoop(i);       // Call the loop again, and pass it the current value of i
-		    }else{$('.gifDiv').empty();}
-		  }, 3000);
+		    }
+		  }, 2000);
 		})(1);
 }
 renderButtons();
