@@ -1,21 +1,27 @@
 <!-- Greg Gallant March 2016 RBC HW 6 -->
+
 <html>
 <head>
 <title>Homework 6</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 <style type="text/css">
 		body {
 			background-color: #807391;
+	
 		}
+		
 		button{
 			margin: 1px;
 			color: black;
 		}
+
 		form, input{
 			margin: 2px;
 			color: royalblue;
+
 		}
 		.rating{
 			color: red;
@@ -26,12 +32,14 @@
 			top: 24px;
 			width: 80px;
 			background-color: black;
+		
 		}
 		.gif{
 			font-size: 12px;
 			color: red;
 			border: .25px;
 			background-color: white;
+
 		}
 		.gifImage{
 			border: solid black 1px;
@@ -42,10 +50,13 @@
 			max-width: 200px;
 			background-color: lightgrey;
 		}
+		
 		.gifDiv{
 			width: 100%;
+			/*margin: 20px 0px 0px 0px;*/
 			top: 30%;
 			left: 0%;
+
 		}
 		.ratingAndImageDiv{
 			float:left;
@@ -67,10 +78,9 @@
 		    <div class="btn-group btn-group-xs" role="group"></div>
 				  <button id="addGif" class="btn-xs btn-warning">Add a GIF</button>
 				  <button type="button" class="btn-xs btn-success animateAll">Animate All</button>
-				  <button type="button" class="btn-xs btn-info toggleAll">Toggle State All</button>
-				  <button type="button" class="btn-xs btn-danger stillAll">Still All</button>
+				  <button type="button" class="btn-xs btn-info toggleAll">Toggle All</button>
+				  <button type="button" class="btn-xs btn-danger stillAll">Stop All</button>
 				  <button type="button" class="btn-xs btn-primary clearAll">Clear All</button>	
-			      <button type="button" class="btn-xs btn-warning autoAll">Automatic Display All</button>
 			      <div>You can also click individual GIFs to toggle its animation</div>
 			</div>
 
@@ -84,13 +94,12 @@
 var limit =12;//how many gifs to get from the api
 var gifs = ['space', 'NYC','Italy','gorilla','puppies','airplane', 'eyes','funny faces','lightning','funny kids','design'];
 
-$(document).on('click', '.gif', whichGif);//when the button with the name of a gif is clicked (class="gif")
+$(document).on('click', '.gif', displayGif);//when the button with the name of a gif is clicked (class="gif")
 $(document).on('click', '.gifImage', checkState);//when a gif is clicked it changes state (still or animate)
 $(document).on('click', '.animateAll', animateAll);//
 $(document).on('click', '.toggleAll', toggleAll);
 $(document).on('click', '.stillAll', stillAll);
 $(document).on('click', '.clearAll', clearAll);
-$(document).on('click', '.autoAll', autoAll);
 
 //this is the listener for the addgif button
 $('#addGif').on('click', function(){
@@ -103,6 +112,7 @@ $('#addGif').on('click', function(){
 		}
 		return false;
 	});
+
 //if the user wants a new button this function makes it happen using the text box.  
 function appendNewButton(gif){ 
     var a = $('<button>')
@@ -127,33 +137,25 @@ function renderButtons(){
 	}
 }
 /*this function iterates through the object (which has been saved in an array and displays the gif as still and makes the attributes needed for checking the state and toggling it by the function checkState)*/
-function whichGif(){
-	var gif = $(this).attr('data-name');
-	displayGif(gif,'still');
-}
-function displayGif(gif,state){
-		// var gif = $(this).attr('data-name');
+function displayGif(){
+		var gif = $(this).attr('data-name');
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC&limit="+12;
-		$.ajax({url: queryURL, method: 'GET'}).done(function(response){
+		// console.log(queryURL);
+		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 			var results = response.data;
                 
                 for (var i = 0; i < results.length; i++) {
                     if (i==0){$('.gifDiv').empty();}
-                    
                     var r = $('<div>').text("Rated: " + results[i].rating).attr('class','rating');
-                    
                     var gifImage= $('<img>');
+                    
                     var fixHgtURL = results[i].images.fixed_height.url;
                     var stillURL = results[i].images.fixed_height_still.url;
-                    if (state == "animate"){
-                    	gifImage.attr('src', fixHgtURL);
-                    	gifImage.attr('data-state',state);
-                    }else{gifImage.attr('src', stillURL);
-					gifImage.attr('data-state',state);
-                	}
+                    
+                    gifImage.attr('src', stillURL);
                 	gifImage.attr('data-still',stillURL);
                 	gifImage.attr('data-animate',fixHgtURL);
-                	
+                	gifImage.attr('data-state','still');
                 	gifImage.attr('class','gifImage');
                 	gifImage.attr('id',i);
                 	
@@ -182,6 +184,7 @@ function checkState(){
                 $(this).attr('data-state', 'still');
             }
          };   
+    
 function animateAll(){
 for (var i = 0; i < limit; i++){
 		$('#'+ i).attr('src', $('#'+ i).data('animate'));
@@ -202,26 +205,22 @@ function toggleAll(){
          }  
      }
 function stillAll(){
+
     for (var i = 0; i < limit; i++){
 		$('#'+ i).attr('src', $('#'+ i).data('still'));
     	$('#'+ i).attr('data-state', 'still');
 	}
+		
 }
 function clearAll(){
+	
 	    $('.gifDiv').empty();
+
 }
-function autoAll(){
-		displayGif(gifs[0],'animate');
-		(function theLoop (i) {
-		  setTimeout(function () {
-		    displayGif(gifs[i],'animate');
-		    if (++i<gifs.length) {          // If i < the number of gif buttons keep going
-		      theLoop(i);       // Call the loop again, and pass it the current value of i
-		    }else{$('.gifDiv').empty();}
-		  }, 3000);
-		})(1);
-}
+
+
 renderButtons();
+
 </script>
 </body>
 </html>
