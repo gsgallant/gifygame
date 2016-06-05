@@ -61,7 +61,7 @@
   		<div id="buttonsView"></div>
 
 		<form id="gif-form" class="well well-sm">
-		    <label for="gif-input">What GIFs do you want?</label>
+		    <label>What GIFs do you want?</label>
 		    <input type="text" id="gif-input"><br>
 		    
 		    <div class="btn-group btn-group-xs" role="group"></div>
@@ -81,7 +81,7 @@
 
 <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
 <script type="text/javascript">
-var limit =12;//how many gifs to get from the api
+var limit =18;//how many gifs to get from the api
 var gifs = ['space', 'NYC','Italy','gorilla','puppies','airplane', 'eyes','funny faces','lightning','funny kids','design'];
 
 $(document).on('click', '.gif', whichGif);//when the button with the name of a gif is clicked (class="gif")
@@ -133,7 +133,7 @@ function whichGif(){
 }
 function displayGif(gif,state){
 		// var gif = $(this).attr('data-name');
-		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC&limit="+12;
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=dc6zaTOxFJmzC&limit="+limit;
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response){
 			var results = response.data;
                 
