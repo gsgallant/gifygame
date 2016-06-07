@@ -14,7 +14,7 @@ AJAX calls (GIFY API), JQuery, Bootstrap, CSS
 
 #Comments
 
-This was a lot of fun to do.  I was able to stretch my creative muscles while also using some new programming skills.  I put a few extra 'bells and whistles' in the app beyond what was asked for in the assignment for Rutger's Coding Bootcamp.
+This was a lot of fun to do.  I was able to stretch my creative muscles while also using some new programming skills.  I put a few extra 'bells and whistles' in the app beyond what was asked for in the assignment for Rutger's Coding Bootcamp.  I found myself thinking about this game even when I wasn't coding.  I kept on conceiving of other functionality that I wanted to try putting into the code and that is why the extra buttons are there.  None of those extras was part of the assignment.
 
 <p align="center">
 &copy; Greg Gallant
